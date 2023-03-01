@@ -28,7 +28,7 @@ namespace TabSSOGraphFileConversion.Controllers
         }
         // api/<controller>/GetMimeMessage
         [HttpPost]
-        [DisableRequestSizeLimit] //<======= add this line
+        [DisableRequestSizeLimit]
         [RequestFormLimits(ValueLengthLimit = int.MaxValue, MultipartBodyLengthLimit = int.MaxValue)]
         public async Task<ActionResult<string>> Post([FromForm] UploadRequest fileUpload)
         {

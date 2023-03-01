@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 /TabSSOGraphUploadPDF/appsettings.json
 /TabSSOGraphUploadPDF/appsettings.Development.json
+/TabSSOGraphUploadPDF/appsettings.Development.json
+/TabSSOGraphUploadPDF/.fx/states/state.dev.json
+/TabSSOGraphUploadPDF/Properties/ServiceDependencies/mmoTabGraphFileConversion - Zip Deploy/profile.arm.json

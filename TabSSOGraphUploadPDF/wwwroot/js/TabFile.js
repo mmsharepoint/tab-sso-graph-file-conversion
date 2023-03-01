@@ -1,16 +1,14 @@
 ﻿(function (TabFile, $, undefined) {
   ssoToken = "";
   siteUrl = "";
-  selectedFilyType = "PDF";
+  selectedFilyType = "";
 
   TabFile.getSSOToken = function () {
     if (microsoftTeams) {
       microsoftTeams.initialize();
       microsoftTeams.authentication.getAuthToken({
         successCallback: (token, event) => {
-          console.log(token);
           TabFile.ssoToken = token;
-          
         },
         failureCallback: (error) => {
           renderError(error);
@@ -30,7 +28,8 @@
             TabFile.siteUrl = "https://" + context.sharePointSite.teamSiteDomain;
           }
         });
-    }   
+    }
+    TabFile.selectedFilyType = "PDF";
   }
 
   TabFile.executeUpload = function (event) {
@@ -110,11 +109,11 @@
       event.dataTransfer.dropEffect = 'copy';
     }
 
-    TabFile.Drag.enableHighlight = function (event) {
-      TabFile.Drag.allowDrop(event);
-      const bgDIV = document.getElementsByClassName('dropZone');
-      bgDIV[0].classList.add('dropZoneHighlight');
-    }
+    //TabFile.Drag.enableHighlight = function (event) {
+    //  TabFile.Drag.allowDrop(event);
+    //  const bgDIV = document.getElementsByClassName('dropZone');
+    //  bgDIV[0].classList.add('dropZoneHighlight');
+    //}
 
     TabFile.Drag.disableHighlight = function (event) {
       TabFile.Drag.allowDrop(event);
