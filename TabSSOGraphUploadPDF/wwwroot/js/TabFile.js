@@ -72,10 +72,8 @@
   }
 
   TabFile.addConvertedFile = function (fileUrl) {
-    const parentDIV = document.getElementsByClassName('dropZoneBG');
-    const fileLineDIV = document.createElement('div');
-    fileLineDIV.innerHTML = '<span>File uploaded to target and available <a href=' + fileUrl + '> here.</a ></span > ';
-    parentDIV[0].appendChild(fileLineDIV);
+    const resultSpan = document.getElementById('resultSpan');
+    resultSpan.innerHTML = 'File uploaded to target and available <a href=' + fileUrl + '> here.</a >';
   }
 
   TabFile.fileTypeChanged = function (event) {
@@ -109,11 +107,11 @@
       event.dataTransfer.dropEffect = 'copy';
     }
 
-    //TabFile.Drag.enableHighlight = function (event) {
-    //  TabFile.Drag.allowDrop(event);
-    //  const bgDIV = document.getElementsByClassName('dropZone');
-    //  bgDIV[0].classList.add('dropZoneHighlight');
-    //}
+    TabFile.Drag.enableHighlight = function (event) {
+      TabFile.Drag.allowDrop(event);
+      const bgDIV = document.getElementsByClassName('dropZone');
+      bgDIV[0].classList.add('dropZoneHighlight');
+    }
 
     TabFile.Drag.disableHighlight = function (event) {
       TabFile.Drag.allowDrop(event);

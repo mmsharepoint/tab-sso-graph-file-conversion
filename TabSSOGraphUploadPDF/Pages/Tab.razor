@@ -5,9 +5,9 @@
 <div>
   <div class='dropZoneBG'>
     Drag your file here:
-    <div class="dropZone @dropZoneHighlight"
-         @ondragenter="EnableHighlight"
-         @ondragleave="DisableHighlight"
+    <div class="dropZone"
+         ondragenter="TabFile.Drag.enableHighlight(event)"
+         ondragleave="TabFile.Drag.disableHighlight(event)"
          ondragover="TabFile.Drag.allowDrop(event)"
          ondrop="TabFile.executeUpload(event)">
       <div style="display: none;" class="loader">
@@ -28,24 +28,7 @@
     <option>JPG</option>
   </select>
   <div class="suppFileTypes">Supported file types: <span id="fileTypes">csv,doc,docx,odp,ods,odt,pot,potm,potx,pps,ppsx,ppsxm,ppt,pptm,pptx,rtf,xls,xlsx</span></div>
+  <div class="resultDiv">
+    <span id="resultSpan"></span>
+  </div>
 </div>
-
-@code {
-    @*private string selectValue;
-    private void ChangeFileType(string value)
-    {
-        selectValue = value;
-        JS.InvokeAsync<string>("TabFile.fileTypeChanged", value);
-    }*@
-    string dropZoneHighlight = "";
-
-    private void EnableHighlight()
-    {
-        dropZoneHighlight = "dropZoneHighlight";
-    }
-
-    private void DisableHighlight()
-    {
-        dropZoneHighlight = "";
-    }
-}
