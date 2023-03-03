@@ -9,7 +9,13 @@ It uses the following capabilities (mostly) on behalf of Microsoft Graph:
 * Writing files bigger than 4MB with a resumable upload
 * Retrieving files with format=pdf/html/jpg conversion which is currently supportred only with Graph beta endpoint
 
-![File upload and PDF conversion](TabSSOGraphUploadPDF/assets/01UploadProcess.gif)
+Select target file type:
+
+![File upload and JPG conversion](assets/02UploadPNGfile.gif)
+
+File upload and JPG conversion
+
+![File upload and JPG conversion](assets/01UploadProcess.gif)
 
 For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2022/)
 

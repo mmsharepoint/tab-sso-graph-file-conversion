@@ -15,20 +15,25 @@
       </div>
       <i id="fileIcon" class="ms-Icon ms-Icon--PDF pdfLogo" aria-hidden="true"></i>
     </div>
-    @*<FluentSelect Value="@selectValue" ValueChanged="((string newValue) => ChangeFileType(newValue))">
-    <FluentSelect @bind-Value="@selectValue" TValue="string">
-      <FluentOption Value=@("PDF")>PDF</FluentOption>
-      <FluentOption Value=@("HTML")>HTML</FluentOption>
-      <FluentOption Value=@("JPG")>JPG</FluentOption>
-    </FluentSelect>>*@    
   </div>
-  <select id="fileType" class="selectFile" onchange="TabFile.fileTypeChanged(event)">
+  @*<select id="fileType" class="selectFile" onchange="TabFile.fileTypeChanged(event)">
     <option>PDF</option>
     <option>HTML</option>
     <option>JPG</option>
-  </select>
+  </select>*@
+  <div class="selectFile">
+    <FluentSelect @bind-Value="@selectValue" onchange="TabFile.fileTypeChanged(event)">
+      <FluentOption Value=@("PDF")>PDF</FluentOption>
+      <FluentOption Value=@("HTML")>HTML</FluentOption>
+      <FluentOption Value=@("JPG")>JPG</FluentOption>
+    </FluentSelect>
+  </div>
   <div class="suppFileTypes">Supported file types: <span id="fileTypes">csv,doc,docx,odp,ods,odt,pot,potm,potx,pps,ppsx,ppsxm,ppt,pptm,pptx,rtf,xls,xlsx</span></div>
   <div class="resultDiv">
     <span id="resultSpan"></span>
   </div>
 </div>
+
+@code {
+    string? selectValue;
+}
