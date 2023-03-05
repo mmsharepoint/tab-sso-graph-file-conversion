@@ -73,7 +73,7 @@
 
   TabFile.addConvertedFile = function (fileUrl) {
     const resultSpan = document.getElementById('resultSpan');
-    resultSpan.innerHTML = 'File uploaded to target and available <a href=' + fileUrl + '> here.</a >';
+    resultSpan.innerHTML = 'File uploaded to target and available <a href=' + fileUrl + ' target="_new"> here.</a >';
   }
 
   TabFile.fileTypeChanged = function (event) {

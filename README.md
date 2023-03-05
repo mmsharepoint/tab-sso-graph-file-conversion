@@ -11,11 +11,11 @@ It uses the following capabilities (mostly) on behalf of Microsoft Graph:
 
 Select target file type:
 
-![File upload and JPG conversion](assets/02UploadPNGfile.gif)
+![File upload and JPG conversion](assets/01SelectFileType.gif)
 
 File upload and JPG conversion
 
-![File upload and JPG conversion](assets/01UploadProcess.gif)
+![File upload and JPG conversion](assets/02UploadPNGfile.gif)
 
 For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2022/)
 
@@ -56,3 +56,5 @@ This is a simple Teams Tab. It uses the Microsoft Graph Toolkit (MGT) for simpli
 * [Upload large files with Microsoft Graph](https://learn.microsoft.com/en-us/graph/sdks/large-file-upload?tabs=csharp?WT.mc_id=M365-MVP-5004617)
 * [Convert supported files to various target formats with Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/driveitem-get-content-format?view=graph-rest-beta&tabs=http&WT.mc_id=M365-MVP-5004617)
 * [Use Fluent UI Web Components with Blazor](https://learn.microsoft.com/en-us/fluent-ui/web-components/integrations/blazor?WT.mc_id=M365-MVP-5004617)
+
+[![Hack Together: Microsoft Graph and .NET](https://img.shields.io/badge/Microsoft%20-Hack--Together-orange?style=for-the-badge&logo=microsoft)](https://github.com/microsoft/hack-together)

@@ -16,11 +16,6 @@
       <i id="fileIcon" class="ms-Icon ms-Icon--PDF pdfLogo" aria-hidden="true"></i>
     </div>
   </div>
-  @*<select id="fileType" class="selectFile" onchange="TabFile.fileTypeChanged(event)">
-    <option>PDF</option>
-    <option>HTML</option>
-    <option>JPG</option>
-  </select>*@
   <div class="selectFile">
     <FluentSelect @bind-Value="@selectValue" onchange="TabFile.fileTypeChanged(event)">
       <FluentOption Value=@("PDF")>PDF</FluentOption>
