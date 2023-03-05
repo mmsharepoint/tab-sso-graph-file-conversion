@@ -93,6 +93,16 @@ code {
 	margin: 15px;
 }
 
+.fileInput {
+	display: flex;
+	margin: 15px;
+}
+
+.switch {
+	margin-left: 15px;
+	margin-top: 8px;
+}
+
 .dropZone {
 	position: absolute;
 	border: 1px solid grey;

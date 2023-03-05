@@ -31,17 +31,24 @@
     }
     TabFile.selectedFilyType = "PDF";
   }
-
+  TabFile.inputUpload = function (event) {
+    const input = document.getElementById('myfile');
+    const files = Array.prototype.slice.call(input.files);
+    TabFile.uploadFiles(files);
+  }
   TabFile.executeUpload = function (event) {
-    TabFile.Drag.allowDrop(event);
-    const loaderDIV = document.getElementsByClassName('loader')[0];
-    loaderDIV.style.display = 'flex';
+    TabFile.Drag.allowDrop(event);    
+    TabFile.Drag.disableHighlight(event);
     const dt = event.dataTransfer;
     const files = Array.prototype.slice.call(dt.files); // [...dt.files];
+    TabFile.uploadFiles(files);
+  }
+  TabFile.uploadFiles = function (files) {
+    const loaderDIV = document.getElementsByClassName('loader')[0];
+    loaderDIV.style.display = 'flex';
     files.forEach(fileToUpload => {
       const extensions = fileToUpload.name.split('.');
       const fileExtension = extensions[extensions.length - 1];
-      TabFile.Drag.disableHighlight(event);
       if (TabFile.Utilities.isFileTypeSupported(fileExtension, TabFile.selectedFilyType)) {
         const formData = new FormData();
         formData.append('file', fileToUpload);
@@ -57,20 +64,19 @@
           },
           body: formData
         })
-        .then((response) => {
-          response.text().then(resp => {
-            console.log(resp);
-            TabFile.addConvertedFile(resp);
-            loaderDIV.style.display = 'none';
+          .then((response) => {
+            response.text().then(resp => {
+              console.log(resp);
+              TabFile.addConvertedFile(resp);
+              loaderDIV.style.display = 'none';
+            });
           });
-        });
       }
       else {
         alert('File type not supported!')
       }
     });
   }
-
   TabFile.addConvertedFile = function (fileUrl) {
     const resultSpan = document.getElementById('resultSpan');
     resultSpan.innerHTML = 'File uploaded to target and available <a href=' + fileUrl + ' target="_new"> here.</a >';

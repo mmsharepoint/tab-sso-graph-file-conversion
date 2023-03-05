@@ -3,19 +3,33 @@
 @inject IJSRuntime JS
 
 <div>
-  <div class='dropZoneBG'>
-    Drag your file here:
-    <div class="dropZone"
-         ondragenter="TabFile.Drag.enableHighlight(event)"
-         ondragleave="TabFile.Drag.disableHighlight(event)"
-         ondragover="TabFile.Drag.allowDrop(event)"
-         ondrop="TabFile.executeUpload(event)">
-      <div style="display: none;" class="loader">
-        <FluentProgressRing />
-      </div>
-      <i id="fileIcon" class="ms-Icon ms-Icon--PDF pdfLogo" aria-hidden="true"></i>
-    </div>
+  <div class="switch">
+    <FluentSwitch @bind-Value=showUpload>Use File Upload</FluentSwitch>
   </div>
+  @if (!showUpload)
+  {
+      <div id="dropFile" class='dropZoneBG' style="display: @showUpload ? none : flex">
+          Drag your file here:
+          <div class="dropZone"
+        ondragenter="TabFile.Drag.enableHighlight(event)"
+        ondragleave="TabFile.Drag.disableHighlight(event)"
+        ondragover="TabFile.Drag.allowDrop(event)"
+        ondrop="TabFile.executeUpload(event)">
+              <div style="display: none;" class="loader">
+                  <FluentProgressRing />
+              </div>
+              <i id="fileIcon" class="ms-Icon ms-Icon--PDF pdfLogo" aria-hidden="true"></i>
+          </div>
+      </div>
+  }    
+  @if (showUpload)
+  {
+    <div id="inputFile" class="fileInput">
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile">
+      <FluentButton onclick="TabFile.inputUpload()">Upload</FluentButton>
+    </div>
+  } 
   <div class="selectFile">
     <FluentSelect @bind-Value="@selectValue" onchange="TabFile.fileTypeChanged(event)">
       <FluentOption Value=@("PDF")>PDF</FluentOption>
@@ -31,4 +45,5 @@
 
 @code {
     string? selectValue;
+    bool showUpload = false;
 }
