@@ -8,16 +8,13 @@
   </div>
   @if (!showUpload)
   {
-      <div id="dropFile" class='dropZoneBG' style="display: @showUpload ? none : flex">
+      <div id="dropFile" class="dropZoneBG">
           Drag your file here:
           <div class="dropZone"
-        ondragenter="TabFile.Drag.enableHighlight(event)"
-        ondragleave="TabFile.Drag.disableHighlight(event)"
-        ondragover="TabFile.Drag.allowDrop(event)"
-        ondrop="TabFile.executeUpload(event)">
-              <div style="display: none;" class="loader">
-                  <FluentProgressRing />
-              </div>
+                ondragenter="TabFile.Drag.enableHighlight(event)"
+                ondragleave="TabFile.Drag.disableHighlight(event)"
+                ondragover="TabFile.Drag.allowDrop(event)"
+                ondrop="TabFile.executeUpload(event)">              
               <i id="fileIcon" class="ms-Icon ms-Icon--PDF pdfLogo" aria-hidden="true"></i>
           </div>
       </div>
@@ -25,11 +22,14 @@
   @if (showUpload)
   {
     <div id="inputFile" class="fileInput">
-      <label for="myfile">Select a file:</label>
+      <label class="fileInputLabel" for="myfile">Select a file: </label>
       <input type="file" id="myfile" name="myfile">
       <FluentButton onclick="TabFile.inputUpload()">Upload</FluentButton>
     </div>
-  } 
+  }
+  <div style="display: none;" class="loader">
+    <FluentProgressRing />
+  </div>
   <div class="selectFile">
     <FluentSelect @bind-Value="@selectValue" onchange="TabFile.fileTypeChanged(event)">
       <FluentOption Value=@("PDF")>PDF</FluentOption>

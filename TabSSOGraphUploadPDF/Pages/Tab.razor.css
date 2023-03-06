@@ -98,9 +98,13 @@ code {
 	margin: 15px;
 }
 
+.fileInputLabel {
+	margin-right: 8px;
+}
+
 .switch {
 	margin-left: 15px;
-	margin-top: 8px;
+	margin-top: 8px;	
 }
 
 .dropZone {
@@ -126,7 +130,6 @@ code {
 
 .selectFile {
 	margin-left: 15px;
-	margin-top: 32px;
 }
 
 .suppFileTypes {
@@ -142,8 +145,8 @@ code {
 }
 
 .loader {
-	position: absolute;
-	top: 25%;
-	left: 45%;
+	position: relative;
+	top: -30px;
+	left: 15%;
 	text-align: center;
 }
