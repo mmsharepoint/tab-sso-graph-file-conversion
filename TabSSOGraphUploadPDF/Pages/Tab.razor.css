@@ -91,6 +91,7 @@ code {
 	width: 400px;
 	height: 200px;
 	margin: 15px;
+	margin-bottom: 32px;
 }
 
 .fileInput {
