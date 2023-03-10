@@ -21,7 +21,7 @@ Switch between drag&drop and file upload:
 
 ![Switch between drag&drop and file upload](assets/03SelectUploadOption.gif)
 
-For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2022/)
+For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2023/03/10/file-conversion-in-a-teams-tab-with-microsoft-graph-and-teams-toolkit-for-visual-studio-c/)
 
 ## Applies to
 
@@ -31,7 +31,7 @@ This sample was created [using the Teams Toolkit with Visual Studio 2022](https:
 
 Version|Date|Author|Comments
 -------|----|--------|--------
-1.0|Mar 14, 2023|[Markus Moeller](http://www.twitter.com/moeller2_0)|Initial release
+1.0|Mar 10, 2023|[Markus Moeller](http://www.twitter.com/moeller2_0)|Initial release
 
 ## Disclaimer
 
@@ -42,7 +42,7 @@ Version|Date|Author|Comments
 - Clone the repository
     ```bash
     git clone https://github.com/mmsharepoint/tab-sso-graph-file-conversion.git
-- Open tab-mgt-person-csharp.sln in Visual Studio
+- Open tab-sso-graph-file-conversion.sln in Visual Studio
 - Perform first actions in GettingStarted.txt (before hitting F5)
 - This should [register an app in Azure AD](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/add-single-sign-on?pivots=visual-studio&WT.mc_id=M365-MVP-5004617#add-sso-to-teams-app-for-visual-studio)
 - Ensure there is an app 
